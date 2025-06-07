@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+
+  root "rails/welcome#index"
+  get "/upload", to: "uploads#index"
+  post "/upload", to: "uploads#create"
+  get "/show", to: "uploads#show"
 end

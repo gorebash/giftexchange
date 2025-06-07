@@ -1,0 +1,11 @@
+<h1>Upload CSV File</h1>
+<%= form_with url: "/upload", method: :post, multipart: true do |form| %>
+  <div>
+    <%= form.label :csv_file, "Select CSV File" %>
+    <%= form.file_field :csv_file, accept: ".csv" %>
+  </div>
+  <div>
+    <%= form.submit "Upload" %>
+  </div>
+<% end %>
+
