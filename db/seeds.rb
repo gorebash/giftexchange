@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+ge = GiftExchange.create
+Attendee.create(
+  { first_name: "Batman", likes: "", gift_exchange: ge }
+)

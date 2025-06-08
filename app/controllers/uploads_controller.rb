@@ -12,7 +12,10 @@ class UploadsController < ApplicationController
     ge = GiftExchange.new
     ge.save
 
-    # todo: save the attendees for the gift exchange
+    attendees = people.split(",").map do |p|
+      { first_name: p.strip, likes: "", gift_exchange_id: ge.id }
+    end
+    Attendee.insert_all attendees unless attendees.empty?
 
     flash[:notice] = "People sent: #{people}"
     redirect_to :show
