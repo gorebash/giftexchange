@@ -1,6 +1,9 @@
 <h1>New Gift Exchange</h1>
 
-
+<% @attendees.each do |a| %>
+  <p><%= a.first_name %></p>
+<% end %>
+<%= link_to "Start Gift Exchange", action: :gifts, gift_exchange_id: params[:gift_exchange_id], class: "btn" %>
 
 <% if flash[:notice] %>
   <p style="color: green;"><%= flash[:notice] %></p>
